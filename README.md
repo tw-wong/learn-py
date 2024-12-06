@@ -7,6 +7,8 @@ Some useful information related with Python.
 - [Data Type: Tuple](#data-type-tuple)
 - [Data Type: Dictionary](#data-type-dictionary)
 - [Data Type: Set](#data-type-set)
+- [Functions](#functions)
+- [Classes](#classes)
 
 ## Virtual Environment
 ```bash
@@ -159,4 +161,63 @@ Removing Duplicates:
 numbers = [1, 2, 2, 3, 4, 4, 5]
 unique_numbers = set(numbers)
 print("Unique Numbers:", unique_numbers)  # Output: {1, 2, 3, 4, 5}
+```
+
+## Functions
+```python
+def greet(name, greeting="Hello"):
+    """
+    This function greets a person with a specified greeting.
+    :param name: str - The name of the person
+    :param greeting: str - The greeting message (default is "Hello")
+    :return: str - A greeting message
+    """
+    return f"{greeting}, {name}!"
+
+# Function calls
+print(greet("Alice"))  # Output: Hello, Alice!
+print(greet("Bob", "Hi"))  # Output: Hi, Bob!
+```
+
+## Classes
+```python
+class Person:
+    """
+    A class to represent a person.
+    """
+    def __init__(self, name, age):
+        """
+        Constructor to initialize the person's name and age.
+        :param name: str - The name of the person
+        :param age: int - The age of the person
+        """
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        """
+        Method to print a greeting message.
+        """
+        return f"Hello, my name is {self.name} and I am {self.age} years old."
+
+# Create an instance of the Person class
+person1 = Person("Alice", 25)
+
+# Access attributes
+print("Name:", person1.name) # Output: Name: Alice
+print("Age:", person1.age) # Output: Age: 25
+
+# Call the method
+print(person1.greet()) # Output: Hello, my name is Alice and I am 25 years old.
+```
+
+Inheritance:
+```python
+class Worker(Person):
+    def __init__(self, name, age, job):
+        super().__init__(name, age)
+        self.job = job
+
+    def work(self):
+        return f"{self.name} is working as a {self.job}."
 ```
