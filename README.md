@@ -1,10 +1,44 @@
 # learn-py
 Some useful information related with Python.
 ## Overview
+- [Package installer (pip)](#package-installer-pip)
 - [Data Type: List](#data-type-list)
 - [Data Type: Tuple](#data-type-tuple)
 - [Data Type: Dictionary](#data-type-dictionary)
 - [Data Type: Set](#data-type-set)
+
+## Package installer (pip)
+```bash
+# install package pandas from PyPI
+pip install pandas
+
+# install multiple pacakges at once - pytest, sphinx and mypy
+pip install pytest sphinx mypy
+
+# install package with optionals
+pip install "fastapi[all]"
+
+# install specific version of requests package
+install requests==2.26.0
+
+# install from github repository (package must be installable)
+pip install 'git+https://github.com/pydantic/pydantic'
+
+# upgrade package
+pip install --upgrade requests
+
+# uninstall package
+pip uninstall pandas
+
+# list installed packages
+pip list
+
+# freeze requirements to file
+pip freeze > requirements.txt
+
+# install packages from requirements.txt
+pip install -r requirements.txt
+```
 
 ## Data Type: List
 ```python
