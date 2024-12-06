@@ -1,11 +1,24 @@
 # learn-py
 Some useful information related with Python.
 ## Overview
+- [Virtual Environment](#virtual-environment)
 - [Package installer (pip)](#package-installer-pip)
 - [Data Type: List](#data-type-list)
 - [Data Type: Tuple](#data-type-tuple)
 - [Data Type: Dictionary](#data-type-dictionary)
 - [Data Type: Set](#data-type-set)
+
+## Virtual Environment
+```bash
+# create virtual environment
+python -m venv myenv
+
+# activate virtual environment
+source myenv/bin/activate
+
+# deactivate virtual environment
+deactivate
+```
 
 ## Package installer (pip)
 ```bash
