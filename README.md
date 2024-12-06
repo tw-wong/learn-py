@@ -221,3 +221,55 @@ class Worker(Person):
     def work(self):
         return f"{self.name} is working as a {self.job}."
 ```
+
+Abstract Classes (interface):
+```python
+from abc import ABC, abstractmethod
+
+# Define the interface using an abstract base class
+class Shape(ABC):
+    """
+    Interface for shapes, requiring implementation of the area and perimeter methods.
+    """
+    
+    @abstractmethod
+    def area(self):
+        pass  # Must be implemented in subclasses
+
+    @abstractmethod
+    def perimeter(self):
+        pass  # Must be implemented in subclasses
+
+# Implement the interface in a concrete class
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+    
+    def perimeter(self):
+        return 2 * (self.width + self.height)
+
+# Implement the interface in another concrete class
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14159 * self.radius * self.radius
+
+    def perimeter(self):
+        return 2 * 3.14159 * self.radius
+
+# Using the classes
+shapes = [
+    Rectangle(5, 10),  # Output: Rectangle with width=5, height=10
+    Circle(7)          # Output: Circle with radius=7
+]
+
+for shape in shapes:
+    print(f"{shape.__class__.__name__}: Area = {shape.area()}, Perimeter = {shape.perimeter()}")
+
+```
